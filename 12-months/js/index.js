@@ -7,7 +7,7 @@
 
 	var numOfImages = 0,
 		gallery = $('#gallery'),
-		videos = [
+		photos = [
 			{
 				title: "Kochaj zwierzęta!",
 				url: "https://lh3.googleusercontent.com/pw/AL9nZEVR3RXozOQNnyZePMDmCiTIs-Mj-MK9d6Iyd4rZguNIRke4QzqGRPpGhpzzX8yNFjQS03w-3TZ7G0RXhKaLTdXJVav3JTQmt4JmnixG0TYl9Fw3k6p-M96tBPAHK-5cTRFjV9mvmOr-AaA9alqgep1flw=w614-h1329-no?authuser=0",
@@ -72,34 +72,53 @@
 
         var loadedIndex = 1, isVideo;
 		
-        $.each( videos, function(index, photo){
-			isVideo = false;
+        $.each( photos, function(index, photo){
+			isVideo = photo.isVideo;
             var img = document.createElement('img');
 			
 			// lazy show the photos one by one
 			img.onload = function(e){
 				img.onload = null;
-				var link = document.createElement('a'),
-				li = document.createElement('li')
-				link.href = this.largeUrl;
+//				var link = document.createElement('a'),
+//				li = document.createElement('li')
+//				link.href = this.largeUrl;
+//
+//				link.appendChild(this);
+//				if( this.isVideo ){
+//					link.rel = 'video';
+//					li.className = 'video'
+//				}
+//				li.appendChild(link);
 
-				link.appendChild(this);
-				if( this.isVideo ){
-					link.rel = 'video';
-					li.className = 'video'
-				}
-				li.appendChild(link);
-				gallery[0].appendChild(li);
-			
-				setTimeout( function(){
-					$(li).addClass('loaded');
-				}, 250*index);
+//			  setTimeout( function(){
+////				gallery[0].appendChild(li);
+//
+//				setTimeout( function(){
+//					$(li).addClass('loaded');
+//				}, 50*loadedIndex++);
+//              }, 250*index);
 			};
 			
 			img['largeUrl'] = photo.url;
-			img['isVideo'] = isVideo;
+			img['isVideo'] = photo.isVideo;
 			img.src = photo.url;
 			img.title = photo.title;
+
+            var link = document.createElement('a'),
+            li = document.createElement('li')
+            link.href = photo.url;
+
+            link.appendChild(img);
+            if( photo.isVideo ){
+                link.rel = 'video';
+                li.className = 'video'
+            }
+            li.appendChild(link);
+            gallery[0].appendChild(li);
+//            setTimeout( function(){
+                $(li).addClass('loaded');
+//            }, 2500);
+
         });
 
 		// finally, initialize photobox on all retrieved images
