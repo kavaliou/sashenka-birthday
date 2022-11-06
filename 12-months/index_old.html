@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Наши фото</title>
+    <style>
+* {
+	 box-sizing: border-box;
+}
+body {
+ background-image: url("pexels-photo.jpg");
+ background-color: #cccccc;
+}
+ .gallery {
+	 display: flex;
+	 margin: 10px auto;
+	 max-width: 600px;
+	 position: relative;
+	 padding-top: 66.6666666667%;
+}
+ @media screen and (min-width: 600px) {
+	 .gallery {
+		 padding-top: 600px;
+	}
+}
+ .gallery__img {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 opacity: 0;
+	 transition: opacity 0.3s ease-in-out;
+	 max-height: 600px;
+	 max-width: 100%;
+	 vertical-align: top;
+}
+ .gallery__thumb {
+	 padding-top: 6px;
+	 margin: 6px;
+	 display: block;
+	 max-height: 150px;
+}
+
+ .gallery__thumb img {
+	 display: block;
+	 max-height: 100px;
+	 max-width: 100%;
+	 vertical-align: top;
+}
+ .gallery__selector {
+	 position: absolute;
+	 opacity: 0;
+	 visibility: hidden;
+}
+ .gallery__selector:checked + .gallery__img {
+	 opacity: 1;
+}
+ .gallery__selector:checked ~ .gallery__thumb > img {
+	 box-shadow: 0 0 0 3px #0be2f6;
+}
+
+    </style>
+</head>
+<body>
+
+<section class="gallery">
+  <div class="gallery__item">
+    <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20211107_112436.jpg" alt=""/>
+    <label for="img-1" class="gallery__thumb"><img src="IMG_20211107_112436.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20211215_100238.jpg" alt=""/>
+    <label for="img-2" class="gallery__thumb"><img src="IMG_20211215_100238.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20211231_224541.jpg" alt=""/>
+    <label for="img-3" class="gallery__thumb"><img src="IMG_20211231_224541.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220220_170336.jpg" alt=""/>
+    <label for="img-4" class="gallery__thumb"><img src="IMG_20220220_170336.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-5" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220326_150421.jpg" alt=""/>
+    <label for="img-5" class="gallery__thumb"><img src="IMG_20220326_150421.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-6" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220421_175339.jpg" alt=""/>
+    <label for="img-6" class="gallery__thumb"><img src="IMG_20220421_175339.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-7" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_9544.jpg" alt=""/>
+    <label for="img-7" class="gallery__thumb"><img src="IMG_9544.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-8" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220616_202126.jpg" alt=""/>
+    <label for="img-8" class="gallery__thumb"><img src="IMG_20220616_202126.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-9" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220730_173012.jpg" alt=""/>
+    <label for="img-9" class="gallery__thumb"><img src="IMG_20220730_173012.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-10" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="Screenshot_2022-11-06-18-27-47-494_com.miui.gallery.jpg" alt=""/>
+    <label for="img-10" class="gallery__thumb"><img src="Screenshot_2022-11-06-18-27-47-494_com.miui.gallery.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-11" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="IMG_20220925_182055.jpg" alt=""/>
+    <label for="img-11" class="gallery__thumb"><img src="IMG_20220925_182055.jpg" alt=""/></label>
+  </div>
+  <div class="gallery__item">
+    <input type="radio" id="img-12" name="gallery" class="gallery__selector"/>
+    <img class="gallery__img" src="photo_2022-11-06.jpeg" alt=""/>
+    <label for="img-12" class="gallery__thumb"><img src="photo_2022-11-06.jpeg" alt=""/></label>
+  </div>
+
+</section>
+
+<script>
+</script>
+</body>
+</html>
