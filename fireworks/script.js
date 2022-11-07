@@ -80,6 +80,8 @@ class Firework {
     this.targetX = targetX
     this.targetY = targetY
 
+    this.type = Math.floor(Math.random() * 2);
+
     this.shade = shade
     this.history = []
   }
@@ -104,8 +106,17 @@ class Firework {
 
         let babies = this.offsprings / 2
         for (let i = 0; i < babies; i++) {
-          let targetX = this.x + this.offsprings * Math.cos(PI2 * i / babies) | 0
-          let targetY = this.y + this.offsprings * Math.sin(PI2 * i / babies) | 0
+          let a = PI2 * i / babies;
+          let sX, sY;
+          if (this.type === 1) {
+            sX = Math.cos(a);
+            sY = Math.sin(a);
+          } else {
+            sX = Math.pow(Math.sin(a), 3);
+            sY = -1 * (13 * Math.cos(a) - 5 * Math.cos(2 * a) - 2 * Math.cos(3 * a) - Math.cos(4 * a)) / 13;
+          }
+          let targetX = this.x + this.offsprings * sX | 0
+          let targetY = this.y + this.offsprings * sY | 0
 
           birthday.fireworks.push(new Firework(this.x, this.y, targetX, targetY, this.shade, 0))
 
