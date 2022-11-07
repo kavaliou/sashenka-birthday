@@ -8,7 +8,7 @@ a{ text-decoration:none; }
 #wrap{ overflow:hidden; padding:3%; }
 #pbOverlay.show ~ #wrap{ -webkit-filter:blur(2px) grayscale(.4); }
 		
-#gallery{ padding:20px; }
+#gallery{ padding:20px 20%; }
 	#gallery li{ list-style:none; perspective:100px; -webkit-perspective:100px; margin:1px; float:left; position:relative; -webkit-transition:.1s; transition:.1s; -webkit-transition:0.1s; }
 		#gallery li.video::before{ content:'\25BA'; color:#FFF; font-size:20px; height:20px; width:20px; line-height:0.9; position:absolute; bottom:3px; left:4px; z-index:1; background:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(0,0,0,0.4); border-radius:0 3px 0 0; pointer-events:none; opacity:0; -webkit-transition:.5s 0.2s; transition:.5s 0.2s; }
 		#gallery li.loaded.video::before{ opacity:1; }
@@ -23,9 +23,20 @@ a{ text-decoration:none; }
 			#gallery li.loaded:hover img{ transform:scale(1.2); -webkit-transform:scale(1.2); }
 			#gallery li.loaded.video:hover::before{ opacity:0; }
 
+.main-text {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    margin-left: -30%;
+    text-align: center;
+}
+
 .continue {
     color: white;
     position: absolute;
     top: 90%;
-    left: 90%;
+    left: 50%;
+    margin-left: -135px;
 }
